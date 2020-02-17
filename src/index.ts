@@ -1,11 +1,9 @@
-type Edges = Map<string, Set<string>>
-type Nodes = Map<string, object>;
-// make a type for fromJSON and toJSON
-
-interface IDirectedGraph {
-  edges: Edges,
-  nodes: Nodes,
-}
+import {
+  Edges,
+  IDirectedGraph,
+  ISimpleDirectedGraph,
+  Nodes,
+} from './meta';
 
 class DirectedGraph implements IDirectedGraph {
   edges: Edges;
@@ -48,12 +46,17 @@ class DirectedGraph implements IDirectedGraph {
     });
   }
 
-  fromJSON(): void {}
+  fromJSON(directedGraph: ISimpleDirectedGraph): void {}
 
-  toJSON = () => ({
-    edges: [...this.edges],
-    nodes: [...this.nodes],
-  });
+  toJSON(): ISimpleDirectedGraph {
+    return {
+      edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
+      nodes: [...this.nodes],
+    }
+  }
+
+  // getInDegree
+  // getOutDegree
 }
 
 export default DirectedGraph;
