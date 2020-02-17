@@ -1,5 +1,13 @@
-declare type Edges = Map<string, Set<string>>;
+declare type SuccessorSet = Set<string>;
+declare type SimpleSuccessorSet = Array<string>;
+declare type Edges = Map<string, SuccessorSet>;
+declare type SimpleEdges = [string, SimpleSuccessorSet][];
 declare type Nodes = Map<string, object>;
+declare type SimpleNodes = [string, object][];
+interface ISimpleDirectedGraph {
+    edges: SimpleEdges;
+    nodes: SimpleNodes;
+}
 interface IDirectedGraph {
     edges: Edges;
     nodes: Nodes;
@@ -13,10 +21,7 @@ declare class DirectedGraph implements IDirectedGraph {
     deleteEdge(predecessor: string): void;
     deleteEdgeSuccessor(predecessor: string, successor: string): void;
     deleteNode(node: string): void;
-    fromJSON(): void;
-    toJSON: () => {
-        edges: [string, Set<string>][];
-        nodes: [string, object][];
-    };
+    fromJSON(directedGraph: ISimpleDirectedGraph): void;
+    toJSON(): ISimpleDirectedGraph;
 }
 export default DirectedGraph;
