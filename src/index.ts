@@ -9,10 +9,15 @@ class DirectedGraph implements IDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
-  constructor() {
-    // make a constructor that hydrates based on array data using this.fromJSON
-    this.edges = new Map();
-    this.nodes = new Map();
+  constructor(simpleDirectedGraph: ISimpleDirectedGraph) {
+    if (simpleDirectedGraph) {
+      const { edges, nodes } = this.fromJSON(simpleDirectedGraph);
+      this.edges = edges;
+      this.nodes = nodes;
+    } else {
+      this.edges = new Map();
+      this.nodes = new Map();
+    }
   }
 
   setEdge(predecessor: string, successor: string): void {
@@ -46,7 +51,17 @@ class DirectedGraph implements IDirectedGraph {
     });
   }
 
-  fromJSON(directedGraph: ISimpleDirectedGraph): void {}
+  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraph {
+    return {
+      edges: directedGraph.edges.reduce((acc, curr) => {
+        return acc.set(curr[0], new Set(curr[1]));
+      }, new Map()),
+
+      nodes: directedGraph.nodes.reduce((acc, cur) => {
+        return acc.set(cur[0], cur[1]);
+      }, new Map()),
+    };
+  }
 
   toJSON(): ISimpleDirectedGraph {
     return {
