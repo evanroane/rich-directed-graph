@@ -21,11 +21,13 @@ class DirectedGraph implements IDirectedGraph {
   }
 
   setEdge(predecessor: string, successor: string): void {
-    if (this.nodes.has(predecessor) && this.nodes.has(successor)) {
-      if (this.edges.has(predecessor)) {
-        this.edges.set(predecessor, this.edges.get(predecessor).add(successor));
+    const { edges, nodes } = this;
+
+    if (nodes.has(predecessor) && nodes.has(successor)) {
+      if (edges.has(predecessor)) {
+        edges.set(predecessor, edges.get(predecessor).add(successor));
       } else {
-        this.edges.set(predecessor, new Set(successor));
+        edges.set(predecessor, new Set([successor]));
       }
     }
   }
