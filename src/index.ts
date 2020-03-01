@@ -33,8 +33,8 @@ class DirectedGraph implements IDirectedGraph {
     }
   }
 
-  setEdge(predecessor: string, successor: string): void {
-    const { edges, nodes } = this;
+  setEdge(predecessor: string, successor: string): IDirectedGraph {
+    const {edges, nodes} = this;
 
     if (nodes.has(predecessor) && nodes.has(successor)) {
       if (edges.has(predecessor)) {
@@ -43,30 +43,38 @@ class DirectedGraph implements IDirectedGraph {
         edges.set(predecessor, new Set([successor]));
       }
     }
+
+    return this;
   }
 
-  setNode(key: string, content: object): void {
+  setNode(key: string, content: object): IDirectedGraph {
     this.nodes.set(key, content);
+
+    return this;
   }
 
-  // Deletes an edge
-  deleteEdge(predecessor: string): void {
+  deleteEdge(predecessor: string): IDirectedGraph {
     this.edges.delete(predecessor);
+
+    return this;
   }
 
-  deleteEdgeSuccessor(predecessor: string, successor: string): void {}
+  deleteEdgeSuccessor(predecessor: string, successor: string): IDirectedGraph {
+    return this;
+  }
 
-  // Deletes a node, its associated edges, and any references to that node in all edges
-  deleteNode(node: string): void {
+  deleteNode(node: string): IDirectedGraph {
     this.nodes.delete(node);
     this.deleteEdge(node);
 
     this.edges.forEach((edge, key) => {
       edge.delete(node);
     });
+
+    return this;
   }
 
-  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraph {
+  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraphData {
     return {
       edges: directedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
@@ -85,8 +93,13 @@ class DirectedGraph implements IDirectedGraph {
     }
   }
 
-  // getInDegree
-  // getOutDegree
+  getInDegree(node: string): number {
+    return NaN;
+  }
+
+  getOutDegree(node: string): number {
+    return NaN;
+  }
 }
 
 export default DirectedGraph;
