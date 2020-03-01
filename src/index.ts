@@ -59,7 +59,7 @@ class DirectedGraph implements IDirectedGraph {
     return this;
   }
 
-  setNode(key: string, content: object): IDirectedGraph {
+  setNode(key: string, content: object = {}): IDirectedGraph {
     this.nodes.set(key, content);
 
     return this;
