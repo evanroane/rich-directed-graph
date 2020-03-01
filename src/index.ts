@@ -27,10 +27,13 @@ interface IDirectedGraphData {
 
 interface IDirectedGraph extends IDirectedGraphData {
   deleteEdge(predecessor: string): IDirectedGraph;
+  deleteEdgeSuccessor(predecessor: string, successor: string): IDirectedGraph;
   deleteNode(node: string): IDirectedGraph;
   fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraphData;
+  get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
+  removeNodeFromEdgeSuccessors(node: string): IDirectedGraph;
   setEdge(predecessor: string, successor: string): IDirectedGraph;
   setNode(key: string, content: object): IDirectedGraph;
   toJSON(): ISimpleDirectedGraph;
