@@ -12,7 +12,7 @@
     "clean": "rm -rf dist/",
     "develop": "webpack --watch",
     "start": "node dist/index.js",
-    "test": "mocha -r ts-node/register test/**"
+    "test": "nyc --reporter=html --reporter=text mocha -r ts-node/register test/**"
   },
   "devDependencies": {
     "@types/chai": "^4.2.9",
