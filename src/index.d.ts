@@ -15,13 +15,13 @@ interface IDirectedGraph {
 declare class DirectedGraph implements IDirectedGraph {
     edges: Edges;
     nodes: Nodes;
-    constructor();
+    constructor(simpleDirectedGraph: ISimpleDirectedGraph);
     setEdge(predecessor: string, successor: string): void;
     setNode(key: string, content: object): void;
     deleteEdge(predecessor: string): void;
     deleteEdgeSuccessor(predecessor: string, successor: string): void;
     deleteNode(node: string): void;
-    fromJSON(directedGraph: ISimpleDirectedGraph): void;
+    fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraph;
     toJSON(): ISimpleDirectedGraph;
 }
 export default DirectedGraph;

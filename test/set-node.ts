@@ -1,5 +1,5 @@
-const { assert } = require('chai');
-const DirectedGraph = require('../dist/directed-graph');
+import { assert } from 'chai';
+import DirectedGraph from '../src/index';
 
 describe('Directed Graph', () => {
   const graph = new DirectedGraph();

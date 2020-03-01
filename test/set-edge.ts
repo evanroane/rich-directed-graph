@@ -1,5 +1,6 @@
-const { expect } = require('chai');
-const DirectedGraph = require('../dist/directed-graph');
+import DirectedGraph from '../src/index';
+import { describe, it } from 'mocha';
+import { expect } from 'chai';
 
 describe('Directed Graph', () => {
 
@@ -43,7 +44,7 @@ describe('Directed Graph', () => {
       const graph = new DirectedGraph();
 
       graph.setNode('joy', {
-        def: 'Joy is man\'s passage from a less to a greater perfection'
+        def: 'passage from a less to a greater perfection'
       });
 
       graph.setEdge('joy', 'desire');

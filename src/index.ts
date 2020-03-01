@@ -1,15 +1,28 @@
-import {
-  Edges,
-  IDirectedGraph,
-  ISimpleDirectedGraph,
-  Nodes,
-} from './meta';
+type SuccessorSet = Set<string>;
+type SimpleSuccessorSet = Array<string>;
+
+type Edges = Map<string, SuccessorSet>
+type SimpleEdges = [string, SimpleSuccessorSet][];
+
+type NodeData = { [key: string]: any; };
+type Nodes = Map<string, NodeData>;
+type SimpleNodes = [string, NodeData][];
+
+interface ISimpleDirectedGraph {
+  edges: SimpleEdges,
+  nodes: SimpleNodes
+}
+
+interface IDirectedGraph {
+  edges: Edges,
+  nodes: Nodes,
+}
 
 class DirectedGraph implements IDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
-  constructor(simpleDirectedGraph: ISimpleDirectedGraph) {
+  constructor(simpleDirectedGraph?: ISimpleDirectedGraph) {
     if (simpleDirectedGraph) {
       const { edges, nodes } = this.fromJSON(simpleDirectedGraph);
       this.edges = edges;
