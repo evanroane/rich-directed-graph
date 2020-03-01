@@ -1,6 +1,6 @@
-import { expect } from 'chai';
 import DirectedGraph from '../src/index';
 import { describe, it } from 'mocha';
+import { expect } from 'chai';
 
 describe('setNode', () => {
   const graph = new DirectedGraph();
