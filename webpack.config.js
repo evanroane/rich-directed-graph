@@ -7,7 +7,7 @@ module.exports = {
     filename: 'directed-graph.js',
     libraryTarget: 'umd',
     globalObject: 'this',
-    library: 'DirectedGraph',
+    library: 'directedGraph',
     libraryExport: 'default',
   },
   devtool: 'inline-source-map',
