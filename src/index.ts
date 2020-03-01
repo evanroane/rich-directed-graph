@@ -72,6 +72,8 @@ class DirectedGraph implements IDirectedGraph {
   }
 
   deleteEdgeSuccessor(predecessor: string, successor: string): IDirectedGraph {
+    this.edges.get(predecessor).delete(successor);
+
     return this;
   }
 
