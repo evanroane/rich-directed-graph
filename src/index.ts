@@ -10,12 +10,24 @@ type SimpleNodes = [string, NodeData][];
 
 interface ISimpleDirectedGraph {
   edges: SimpleEdges,
-  nodes: SimpleNodes
+  nodes: SimpleNodes,
 }
 
-interface IDirectedGraph {
+interface IDirectedGraphData {
   edges: Edges,
   nodes: Nodes,
+}
+
+
+interface IDirectedGraph extends IDirectedGraphData {
+  deleteEdge(predecessor: string): IDirectedGraph;
+  deleteNode(node: string): IDirectedGraph;
+  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraphData;
+  getInDegree(node: string): number;
+  getOutDegree(node: string): number;
+  setEdge(predecessor: string, successor: string): IDirectedGraph;
+  setNode(key: string, content: object): IDirectedGraph;
+  toJSON(): ISimpleDirectedGraph;
 }
 
 class DirectedGraph implements IDirectedGraph {
