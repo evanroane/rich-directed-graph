@@ -69,7 +69,7 @@ class DirectedGraph implements IDirectedGraph {
   fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraph {
     return {
       edges: directedGraph.edges.reduce((acc, curr) => {
-        return acc.set(curr[0], new Set(curr[1]));
+        return acc.set(curr[0], new Set([...curr[1]]));
       }, new Map()),
 
       nodes: directedGraph.nodes.reduce((acc, cur) => {
