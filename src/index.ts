@@ -8,6 +8,13 @@ type NodeData = { [key: string]: any; };
 type Nodes = Map<string, NodeData>;
 type SimpleNodes = [string, NodeData][];
 
+interface RichNode {
+  data: NodeData,
+  edges: SuccessorSet,
+  inDegree: number,
+  outDegree: number,
+}
+
 interface ISimpleDirectedGraph {
   edges: SimpleEdges,
   nodes: SimpleNodes,
@@ -120,7 +127,7 @@ class DirectedGraph implements IDirectedGraph {
     return NaN;
   }
 
-  get(node: string) {
+  get(node: string): RichNode {
     return {
       data: this.nodes.get(node),
       edges: this.edges.get(node),
