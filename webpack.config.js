@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'directed-graph.js',
+    filename: 'index.js',
     libraryTarget: 'umd',
     globalObject: 'this',
     library: 'directedGraph',
@@ -22,6 +22,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [ '.ts', '.js' ],
+    extensions: [ '.ts' ],
   },
 };
