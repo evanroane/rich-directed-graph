@@ -18,7 +18,6 @@ interface IDirectedGraphData {
   nodes: Nodes,
 }
 
-
 interface IDirectedGraph extends IDirectedGraphData {
   deleteEdge(predecessor: string): IDirectedGraph;
   deleteNode(node: string): IDirectedGraph;
@@ -29,6 +28,7 @@ interface IDirectedGraph extends IDirectedGraphData {
   setNode(key: string, content: object): IDirectedGraph;
   toJSON(): ISimpleDirectedGraph;
 }
+
 
 class DirectedGraph implements IDirectedGraph {
   edges: Edges;
@@ -80,7 +80,12 @@ class DirectedGraph implements IDirectedGraph {
   deleteNode(node: string): IDirectedGraph {
     this.nodes.delete(node);
     this.deleteEdge(node);
+    this.removeNodeFromEdgeSuccessors(node);
 
+    return this;
+  }
+
+  removeNodeFromEdgeSuccessors(node: string): IDirectedGraph {
     this.edges.forEach((edge, key) => {
       edge.delete(node);
     });
