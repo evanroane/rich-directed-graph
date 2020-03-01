@@ -119,6 +119,15 @@ class DirectedGraph implements IDirectedGraph {
   getOutDegree(node: string): number {
     return NaN;
   }
+
+  get(node: string) {
+    return {
+      data: this.nodes.get(node),
+      edges: this.edges.get(node),
+      inDegree: this.getInDegree(node),
+      outDegree: this.getOutDegree(node),
+    };
+  }
 }
 
 export default DirectedGraph;
