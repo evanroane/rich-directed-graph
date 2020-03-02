@@ -1,10 +1,10 @@
-import populatedGraph from './populated-graph';
+import getPopulatedGraph from './populated-graph';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 describe('deleteEdge', () => {
   it('should do something', () => {
-    const graph = populatedGraph;
+    const graph = getPopulatedGraph();
 
     //assert where hate is
     expect(graph.edges.has('hate')).to.be.true;
