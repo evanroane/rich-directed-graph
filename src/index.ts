@@ -135,7 +135,7 @@ class DirectedGraph implements IDirectedGraph {
   }
 
   getOutDegree(node: string): number {
-    return NaN;
+    return this.edges.has(node) ? this.edges.get(node).size : 0;
   }
 
   get(node: string): RichNode {
