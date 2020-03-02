@@ -9,10 +9,10 @@ type Nodes = Map<string, NodeData>;
 type SimpleNodes = [string, NodeData][];
 
 interface RichNode {
-  node: string,
   data: NodeData,
   edges: SuccessorSet,
   inDegree: number,
+  node: string,
   outDegree: number,
 }
 
@@ -141,10 +141,10 @@ class DirectedGraph implements IDirectedGraph {
 
   get(node: string): RichNode {
     return {
-      node,
       data: this.nodes.get(node),
       edges: this.edges.get(node) || new Set(),
       inDegree: this.getInDegree(node),
+      node,
       outDegree: this.getOutDegree(node),
     };
   }
