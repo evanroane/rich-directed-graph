@@ -1,4 +1,4 @@
-import { getPopulatedGraph } from './populated-graph';
+import { getPopulatedGraph } from './graph-data';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
