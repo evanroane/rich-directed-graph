@@ -123,7 +123,16 @@ class DirectedGraph implements IDirectedGraph {
   }
 
   getInDegree(node: string): number {
-    return NaN;
+    let inDegree: number = 0;
+
+    this.edges.forEach((successors, key) => {
+      console.log(key, successors);
+      if (successors.has(node)) {
+        inDegree = inDegree + 1;
+      }
+    });
+
+    return inDegree;
   }
 
   getOutDegree(node: string): number {
