@@ -3,7 +3,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 describe('getInDegree', () => {
-  it('should get the in degree of sadness', () => {
+  it('should get the in degree of joy', () => {
     const graph = getPopulatedGraph();
 
     const inDegree = graph.getInDegree('joy');
