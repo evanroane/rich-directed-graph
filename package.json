@@ -33,5 +33,9 @@
     "data structure",
     "directed graph",
     "graph"
-  ]
+  ],
+  "dependencies": {
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15"
+  }
 }
