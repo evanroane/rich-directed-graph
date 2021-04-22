@@ -3,7 +3,7 @@
   "description": "A directed graph data structure",
   "license": "MIT",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "name": "rich-directed-graph",
   "private": true,
   "version": "1.0.0",
