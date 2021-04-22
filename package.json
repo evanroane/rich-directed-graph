@@ -11,7 +11,7 @@
     "build": "rollup --config",
     "clean": "rm -rf lib/",
     "develop": "rollup --config --watch",
-    "test": "mocha -r ts-node/register test/**",
+    "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --require ts-node/register 'test/**/*.ts'",
     "test:coverage": "nyc --reporter=html --reporter=text mocha -r ts-node/register test/**"
   },
   "devDependencies": {

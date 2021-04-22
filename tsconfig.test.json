@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "target": "ES2015",
+    "types": [
+      "node"
+    ]
+  }
+}
