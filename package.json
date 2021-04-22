@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "name": "directed-graph",
+  "name": "rich-directed-graph",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -16,18 +16,18 @@
     "test:coverage": "nyc --reporter=html --reporter=text mocha -r ts-node/register test/**"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.9",
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^13.5.0",
+    "@types/chai": "^4.2.16",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.41",
     "babel-core": "^6.26.3",
-    "chai": "^4.2.0",
-    "mocha": "^7.1.0",
-    "nyc": "^15.0.0",
-    "ts-loader": "^6.2.1",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.7.5",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "ts-loader": "^9.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0"
   },
   "keywords": [
     "data structure",
@@ -35,7 +35,7 @@
     "graph"
   ],
   "dependencies": {
-    "@types/lodash": "^4.14.149",
-    "lodash": "^4.17.15"
+    "@types/lodash": "^4.14.168",
+    "lodash": "^4.17.21"
   }
 }
