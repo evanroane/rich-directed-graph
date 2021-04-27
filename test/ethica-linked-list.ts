@@ -1,4 +1,5 @@
-export const data = [
+// Linked list expressing the relationships between the axioms, propositions, etc. of baruch Spinoza's "Ethica"
+export const ethicaLinkedList = [
   {
     parent: "1A01",
     child: "1P04"

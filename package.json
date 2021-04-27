@@ -5,8 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/src/index.d.ts",
   "name": "rich-directed-graph",
-  "private": true,
-  "version": "1.0.0",
+  "version": "0.0.2",
   "scripts": {
     "build": "rollup --config",
     "clean": "rm -rf lib/",

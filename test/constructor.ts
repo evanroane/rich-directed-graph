@@ -2,7 +2,6 @@ import DirectedGraph from '../src/index';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { getPopulatedGraph, simpleGraphData } from './graph-data';
-import exp from "constants";
 
 describe('constructor', () => {
   it('should make a new graph with no previous data', () => {
