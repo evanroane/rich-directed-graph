@@ -10,5 +10,6 @@
     "types": [
       "node"
     ]
-  }
+  },
+  "files": ["src/index.ts"]
 }
