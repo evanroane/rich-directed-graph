@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/src/index.d.ts",
   "name": "rich-directed-graph",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "rollup --config",
     "clean": "rm -rf lib/",
@@ -16,10 +16,12 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/chai": "^4.2.16",
+    "@types/lodash": "^4.14.168",
     "@types/mocha": "^8.2.2",
     "@types/node": "^14.14.41",
     "babel-core": "^6.26.3",
     "chai": "^4.3.4",
+    "lodash": "^4.17.21",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "rollup": "^2.45.2",
@@ -32,9 +34,5 @@
     "data structure",
     "directed graph",
     "graph"
-  ],
-  "dependencies": {
-    "@types/lodash": "^4.14.168",
-    "lodash": "^4.17.21"
-  }
+  ]
 }
