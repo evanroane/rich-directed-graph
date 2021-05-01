@@ -4,7 +4,7 @@ type SimpleSuccessorSet = Array<string>;
 type Edges = Map<string, SuccessorSet>
 type SimpleEdges = [string, SimpleSuccessorSet][];
 
-type NodeData = { [key: string]: any; };
+type NodeData = Record<string, any>;
 type Nodes = Map<string, NodeData>;
 type SimpleNodes = [string, NodeData][];
 
@@ -41,7 +41,7 @@ interface IDirectedGraph extends IDirectedGraphData {
 }
 
 
-class DirectedGraph implements IDirectedGraph {
+export default class DirectedGraph implements IDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
@@ -70,7 +70,7 @@ class DirectedGraph implements IDirectedGraph {
     return this;
   }
 
-  setNode(key: string, content: object = {}): IDirectedGraph {
+  setNode(key: string, content: NodeData = {}): IDirectedGraph {
     this.nodes.set(key, content);
 
     return this;
@@ -149,5 +149,3 @@ class DirectedGraph implements IDirectedGraph {
     };
   }
 }
-
-export default DirectedGraph;
