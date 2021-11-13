@@ -6,46 +6,46 @@ export type SerializableNodes = [string, NodeData][];
 export type SerializableSuccessorSet = Array<string>;
 export type SerializableEdges = [string, SerializableSuccessorSet][];
 
-interface RichNode {
-  data: NodeData,
-  edges: SuccessorSet,
-  inDegree: number,
-  node: string,
-  outDegree: number,
+export type RichNode = {
+  data: NodeData;
+  edges: SuccessorSet;
+  inDegree: number;
+  node: string;
+  outDegree: number;
 }
 
-interface ISimpleDirectedGraph {
-  edges: SerializableEdges,
-  nodes: SerializableNodes,
+export type SerializableDirectedGraph = {
+  edges: SerializableEdges;
+  nodes: SerializableNodes;
 }
 
-interface IDirectedGraphData {
-  edges: Edges,
-  nodes: Nodes,
+export type DirectedGraphData = {
+  edges: Edges;
+  nodes: Nodes;
 }
 
-interface IDirectedGraph extends IDirectedGraphData {
-  deleteEdge(predecessor: string): IDirectedGraph;
-  deleteEdgeSuccessor(predecessor: string, successor: string): IDirectedGraph;
-  deleteNode(node: string): IDirectedGraph;
-  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraphData;
+export type RichDirectedGraph = DirectedGraphData & {
+  deleteEdge(predecessor: string): RichDirectedGraph;
+  deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph;
+  deleteNode(node: string): RichDirectedGraph;
+  fromJSON(directedGraph: SerializableDirectedGraph): DirectedGraphData;
   get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
-  removeNodeFromEdgeSuccessors(node: string): IDirectedGraph;
-  setEdge(predecessor: string, successor: string): IDirectedGraph;
-  setNode(key: string, content: object): IDirectedGraph;
-  toJSON(): ISimpleDirectedGraph;
+  removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph;
+  setEdge(predecessor: string, successor: string): RichDirectedGraph;
+  setNode(key: string, content: object): RichDirectedGraph;
+  toJSON(): SerializableDirectedGraph;
 }
 
 
-export default class DirectedGraph implements IDirectedGraph {
+export default class RDG implements RichDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
-  constructor(simpleDirectedGraph?: ISimpleDirectedGraph) {
-    if (simpleDirectedGraph) {
-      const { edges, nodes } = this.fromJSON(simpleDirectedGraph);
+  constructor(serializableDirectedGraph?: SerializableDirectedGraph) {
+    if (serializableDirectedGraph) {
+      const { edges, nodes } = this.fromJSON(serializableDirectedGraph);
       this.edges = edges;
       this.nodes = nodes;
     } else {
@@ -54,7 +54,7 @@ export default class DirectedGraph implements IDirectedGraph {
     }
   }
 
-  setEdge(predecessor: string, successor: string): IDirectedGraph {
+  setEdge(predecessor: string, successor: string): RichDirectedGraph {
     const {edges, nodes} = this;
 
     if (nodes.has(predecessor) && nodes.has(successor)) {
@@ -68,25 +68,25 @@ export default class DirectedGraph implements IDirectedGraph {
     return this;
   }
 
-  setNode(key: string, content: NodeData = {}): IDirectedGraph {
+  setNode(key: string, content: NodeData = {}): RichDirectedGraph {
     this.nodes.set(key, content);
 
     return this;
   }
 
-  deleteEdge(predecessor: string): IDirectedGraph {
+  deleteEdge(predecessor: string): RichDirectedGraph {
     this.edges.delete(predecessor);
 
     return this;
   }
 
-  deleteEdgeSuccessor(predecessor: string, successor: string): IDirectedGraph {
+  deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph {
     this.edges.get(predecessor).delete(successor);
 
     return this;
   }
 
-  deleteNode(node: string): IDirectedGraph {
+  deleteNode(node: string): RichDirectedGraph {
     this.nodes.delete(node);
     this.deleteEdge(node);
     this.removeNodeFromEdgeSuccessors(node);
@@ -94,7 +94,7 @@ export default class DirectedGraph implements IDirectedGraph {
     return this;
   }
 
-  removeNodeFromEdgeSuccessors(node: string): IDirectedGraph {
+  removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph {
     this.edges.forEach((edge, key) => {
       edge.delete(node);
     });
@@ -102,7 +102,7 @@ export default class DirectedGraph implements IDirectedGraph {
     return this;
   }
 
-  fromJSON(directedGraph: ISimpleDirectedGraph): IDirectedGraphData {
+  fromJSON(directedGraph: SerializableDirectedGraph): DirectedGraphData {
     return {
       edges: directedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
@@ -114,7 +114,7 @@ export default class DirectedGraph implements IDirectedGraph {
     };
   }
 
-  toJSON(): ISimpleDirectedGraph {
+  toJSON(): SerializableDirectedGraph {
     return {
       edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
       nodes: [...this.nodes],
