@@ -41,25 +41,25 @@ export type RichDirectedGraph = RichDirectedGraphData & {
 export type RichDirectedGraphInitializationOptions = {
   serializedDirectedGraph?: SerializableRichDirectedGraph;
   richDirectedGraph?: RichDirectedGraph;
-} | undefined;
+};
 
 
 export default class RDG implements RichDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
-  constructor({ richDirectedGraph, serializedDirectedGraph }: RichDirectedGraphInitializationOptions) {
-    if (richDirectedGraph) {
-      const { edges, nodes } = richDirectedGraph;
-      this.edges = edges;
-      this.nodes = nodes;
-    } else if (serializedDirectedGraph) {
-      const { edges, nodes } = this.fromSerializable(serializedDirectedGraph);
-      this.edges = edges;
-      this.nodes = nodes;
-    } else {
+  constructor(options?: RichDirectedGraphInitializationOptions) {
+    if (!options) {
       this.edges = new Map();
       this.nodes = new Map();
+    } else if (options.richDirectedGraph) {
+      const { edges, nodes } = options.richDirectedGraph;
+      this.edges = edges;
+      this.nodes = nodes;
+    } else if (options.serializedDirectedGraph) {
+      const { edges, nodes } = this.fromSerializable(options.serializedDirectedGraph);
+      this.edges = edges;
+      this.nodes = nodes;
     }
   }
 

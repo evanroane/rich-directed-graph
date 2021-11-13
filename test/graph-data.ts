@@ -1,7 +1,7 @@
-import DirectedGraph from '../src';
+import RDG, { RichDirectedGraph, SerializableRichDirectedGraph } from '../src';
 
-function getPopulatedGraph(): any {
-  return new DirectedGraph()
+function getPopulatedGraph(): RichDirectedGraph {
+  return new RDG()
     .setNode('desire', {def: 'appetite with the consciousness of it'})
     .setNode('joy', {def: 'passage from a lesser to a greater perfection'})
     .setNode('sadness', {def: 'passage from a greater to a lesser perfection'})
@@ -25,7 +25,7 @@ function getPopulatedGraph(): any {
     .setEdge('mockery', 'hate');
 }
 
-const simpleGraphData = {
+const serializedGraphData: SerializableRichDirectedGraph = {
   edges: [
     ['disdain', ['sadness']],
     ['love', ['joy']],
@@ -106,4 +106,4 @@ const simpleGraphData = {
 };
 
 
-export { getPopulatedGraph, simpleGraphData };
+export { getPopulatedGraph, serializedGraphData };
