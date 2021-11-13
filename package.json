@@ -10,6 +10,7 @@
     "build": "rollup --config",
     "clean": "rm -rf lib/",
     "develop": "rollup --config --watch",
+    "docs": "typedoc src/index.ts",
     "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --require ts-node/register 'test/**/*.ts'",
     "test:coverage": "nyc --reporter=html --reporter=text mocha -r ts-node/register test/**"
   },
@@ -28,6 +29,7 @@
     "ts-loader": "^9.1.0",
     "ts-node": "^9.1.1",
     "tslib": "^2.2.0",
+    "typedoc": "^0.20.36",
     "typescript": "^4.2.4"
   },
   "keywords": [
