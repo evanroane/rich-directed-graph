@@ -14,7 +14,7 @@ export type RichNode = {
   outDegree: number;
 };
 
-export type SerializableRichDirectedGraph = {
+export type SerializedRichDirectedGraph = {
   edges: SerializableEdges;
   nodes: SerializableNodes;
 };
@@ -28,18 +28,18 @@ export type RichDirectedGraph = RichDirectedGraphData & {
   deleteEdge(predecessor: string): RichDirectedGraph;
   deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph;
   deleteNode(node: string): RichDirectedGraph;
-  fromSerializable(directedGraph: SerializableRichDirectedGraph): RichDirectedGraphData;
+  fromSerializable(directedGraph: SerializedRichDirectedGraph): RichDirectedGraphData;
   get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
   removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph;
   setEdge(predecessor: string, successor: string): RichDirectedGraph;
   setNode(key: string, content: object): RichDirectedGraph;
-  toSerializable(): SerializableRichDirectedGraph;
+  toSerializable(): SerializedRichDirectedGraph;
 };
 
 export type RichDirectedGraphInitializationOptions = {
-  serializedDirectedGraph?: SerializableRichDirectedGraph;
+  serializedDirectedGraph?: SerializedRichDirectedGraph;
   richDirectedGraph?: RichDirectedGraph;
 };
 
@@ -111,19 +111,19 @@ export default class RDG implements RichDirectedGraph {
     return this;
   }
 
-  fromSerializable(directedGraph: SerializableRichDirectedGraph): RichDirectedGraphData {
+  fromSerializable(serializedRichDirectedGraph: SerializedRichDirectedGraph): RichDirectedGraphData {
     return {
-      edges: directedGraph.edges.reduce((acc, curr) => {
+      edges: serializedRichDirectedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
       }, new Map()),
 
-      nodes: directedGraph.nodes.reduce((acc, cur) => {
+      nodes: serializedRichDirectedGraph.nodes.reduce((acc, cur) => {
         return acc.set(cur[0], cur[1]);
       }, new Map()),
     };
   }
 
-  toSerializable(): SerializableRichDirectedGraph {
+  toSerializable(): SerializedRichDirectedGraph {
     return {
       edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
       nodes: [...this.nodes],
