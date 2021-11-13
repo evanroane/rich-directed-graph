@@ -76,7 +76,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">IDirectedGraph</span></li>
+					<li><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -102,14 +102,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#deleteedge" class="tsd-kind-icon">delete<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#deleteedgesuccessor" class="tsd-kind-icon">delete<wbr>Edge<wbr>Successor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#deletenode" class="tsd-kind-icon">delete<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#fromjson" class="tsd-kind-icon">fromJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#fromserializable" class="tsd-kind-icon">from<wbr>Serializable</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#getindegree" class="tsd-kind-icon">get<wbr>InDegree</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#getoutdegree" class="tsd-kind-icon">get<wbr>Out<wbr>Degree</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#removenodefromedgesuccessors" class="tsd-kind-icon">remove<wbr>Node<wbr>From<wbr>Edge<wbr>Successors</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#setedge" class="tsd-kind-icon">set<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#setnode" class="tsd-kind-icon">set<wbr>Node</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#toserializable" class="tsd-kind-icon">to<wbr>Serializable</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,19 +121,27 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>simpleDirectedGraph<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ISimpleDirectedGraph</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+						<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>richDirectedGraph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a><span class="tsd-signature-symbol">; </span>serializedDirectedGraph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L46">index.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L49">index.ts:49</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> simpleDirectedGraph: <span class="tsd-signature-type">ISimpleDirectedGraph</span></h5>
+									<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>richDirectedGraph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a><span class="tsd-signature-symbol">; </span>serializedDirectedGraph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> rich<wbr>Directed<wbr>Graph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> serialized<wbr>Directed<wbr>Graph<span class="tsd-signature-symbol">?: </span><a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
@@ -146,22 +154,22 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="edges" class="tsd-anchor"></a>
 					<h3>edges</h3>
-					<div class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Edges</span></div>
+					<div class="tsd-signature tsd-kind-icon">edges<span class="tsd-signature-symbol">:</span> <a href="../modules.html#edges" class="tsd-signature-type" data-tsd-kind="Type alias">Edges</a></div>
 					<aside class="tsd-sources">
-						<p>Implementation of IDirectedGraph.edges</p>
+						<p>Implementation of RichDirectedGraph.edges</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L45">index.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L48">index.ts:48</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="nodes" class="tsd-anchor"></a>
 					<h3>nodes</h3>
-					<div class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Nodes</span></div>
+					<div class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">:</span> <a href="../modules.html#nodes" class="tsd-signature-type" data-tsd-kind="Type alias">Nodes</a></div>
 					<aside class="tsd-sources">
-						<p>Implementation of IDirectedGraph.nodes</p>
+						<p>Implementation of RichDirectedGraph.nodes</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L46">index.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L49">index.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -172,14 +180,14 @@
 					<a name="deleteedge" class="tsd-anchor"></a>
 					<h3>delete<wbr>Edge</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<wbr>Edge<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Edge<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.deleteEdge</p>
+								<p>Implementation of RichDirectedGraph.deleteEdge</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L79">index.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L86">index.ts:86</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -188,7 +196,7 @@
 									<h5>predecessor: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -196,14 +204,14 @@
 					<a name="deleteedgesuccessor" class="tsd-anchor"></a>
 					<h3>delete<wbr>Edge<wbr>Successor</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<wbr>Edge<wbr>Successor<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, successor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Edge<wbr>Successor<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, successor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.deleteEdgeSuccessor</p>
+								<p>Implementation of RichDirectedGraph.deleteEdgeSuccessor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L85">index.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L92">index.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -215,7 +223,7 @@
 									<h5>successor: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -223,14 +231,14 @@
 					<a name="deletenode" class="tsd-anchor"></a>
 					<h3>delete<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">delete<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.deleteNode</p>
+								<p>Implementation of RichDirectedGraph.deleteNode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L91">index.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L98">index.ts:98</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -239,31 +247,31 @@
 									<h5>node: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fromjson" class="tsd-anchor"></a>
-					<h3>fromJSON</h3>
+					<a name="fromserializable" class="tsd-anchor"></a>
+					<h3>from<wbr>Serializable</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fromJSON<span class="tsd-signature-symbol">(</span>directedGraph<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ISimpleDirectedGraph</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraphData</span></li>
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Serializable<span class="tsd-signature-symbol">(</span>directedGraph<span class="tsd-signature-symbol">: </span><a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraphdata" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraphData</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.fromJSON</p>
+								<p>Implementation of RichDirectedGraph.fromSerializable</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L107">index.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L114">index.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>directedGraph: <span class="tsd-signature-type">ISimpleDirectedGraph</span></h5>
+									<h5>directedGraph: <a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraphData</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraphdata" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraphData</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -271,14 +279,14 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RichNode</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richnode" class="tsd-signature-type" data-tsd-kind="Type alias">RichNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.get</p>
+								<p>Implementation of RichDirectedGraph.get</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L142">index.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L149">index.ts:149</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -287,7 +295,7 @@
 									<h5>node: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RichNode</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richnode" class="tsd-signature-type" data-tsd-kind="Type alias">RichNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -300,9 +308,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.getInDegree</p>
+								<p>Implementation of RichDirectedGraph.getInDegree</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L126">index.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L133">index.ts:133</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -324,9 +332,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.getOutDegree</p>
+								<p>Implementation of RichDirectedGraph.getOutDegree</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L138">index.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L145">index.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -343,14 +351,14 @@
 					<a name="removenodefromedgesuccessors" class="tsd-anchor"></a>
 					<h3>remove<wbr>Node<wbr>From<wbr>Edge<wbr>Successors</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Node<wbr>From<wbr>Edge<wbr>Successors<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Node<wbr>From<wbr>Edge<wbr>Successors<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.removeNodeFromEdgeSuccessors</p>
+								<p>Implementation of RichDirectedGraph.removeNodeFromEdgeSuccessors</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L99">index.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L106">index.ts:106</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -359,7 +367,7 @@
 									<h5>node: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -367,14 +375,14 @@
 					<a name="setedge" class="tsd-anchor"></a>
 					<h3>set<wbr>Edge</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Edge<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, successor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Edge<span class="tsd-signature-symbol">(</span>predecessor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, successor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.setEdge</p>
+								<p>Implementation of RichDirectedGraph.setEdge</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L59">index.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L66">index.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -386,7 +394,7 @@
 									<h5>successor: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -394,14 +402,14 @@
 					<a name="setnode" class="tsd-anchor"></a>
 					<h3>set<wbr>Node</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Node<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NodeData</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Node<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">?: </span><a href="../modules.html#nodedata" class="tsd-signature-type" data-tsd-kind="Type alias">NodeData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.setNode</p>
+								<p>Implementation of RichDirectedGraph.setNode</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L73">index.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L80">index.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -410,28 +418,28 @@
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>content: <span class="tsd-signature-type">NodeData</span><span class="tsd-signature-symbol"> = {}</span></h5>
+									<h5>content: <a href="../modules.html#nodedata" class="tsd-signature-type" data-tsd-kind="Type alias">NodeData</a><span class="tsd-signature-symbol"> = {}</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#richdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">RichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="tojson" class="tsd-anchor"></a>
-					<h3>toJSON</h3>
+					<a name="toserializable" class="tsd-anchor"></a>
+					<h3>to<wbr>Serializable</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ISimpleDirectedGraph</span></li>
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Serializable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of IDirectedGraph.toJSON</p>
+								<p>Implementation of RichDirectedGraph.toSerializable</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/354519c/src/index.ts#L119">index.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/evanroane/rich-directed-graph/blob/d07c458/src/index.ts#L126">index.ts:126</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ISimpleDirectedGraph</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules.html#serializablerichdirectedgraph" class="tsd-signature-type" data-tsd-kind="Type alias">SerializableRichDirectedGraph</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -471,7 +479,7 @@
 								<a href="default.html#deletenode" class="tsd-kind-icon">delete<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="default.html#fromjson" class="tsd-kind-icon">fromJSON</a>
+								<a href="default.html#fromserializable" class="tsd-kind-icon">from<wbr>Serializable</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="default.html#get" class="tsd-kind-icon">get</a>
@@ -492,12 +500,48 @@
 								<a href="default.html#setnode" class="tsd-kind-icon">set<wbr>Node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="default.html#tojson" class="tsd-kind-icon">toJSON</a>
+								<a href="default.html#toserializable" class="tsd-kind-icon">to<wbr>Serializable</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#edges" class="tsd-kind-icon">Edges</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#nodedata" class="tsd-kind-icon">Node<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#nodes" class="tsd-kind-icon">Nodes</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#richdirectedgraph" class="tsd-kind-icon">Rich<wbr>Directed<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#richdirectedgraphdata" class="tsd-kind-icon">Rich<wbr>Directed<wbr>Graph<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#richdirectedgraphinitializationoptions" class="tsd-kind-icon">Rich<wbr>Directed<wbr>Graph<wbr>Initialization<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#richnode" class="tsd-kind-icon">Rich<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#serializableedges" class="tsd-kind-icon">Serializable<wbr>Edges</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#serializablenodes" class="tsd-kind-icon">Serializable<wbr>Nodes</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#serializablerichdirectedgraph" class="tsd-kind-icon">Serializable<wbr>Rich<wbr>Directed<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#serializablesuccessorset" class="tsd-kind-icon">Serializable<wbr>Successor<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#successorset" class="tsd-kind-icon">Successor<wbr>Set</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
