@@ -2,7 +2,7 @@
 
 ## About
 
-What is a rich directed graph?
+What is a rich, directed graph?
 
 ## Installation
 
