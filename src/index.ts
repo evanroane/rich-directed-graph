@@ -1,12 +1,10 @@
-type SuccessorSet = Set<string>;
-type SimpleSuccessorSet = Array<string>;
-
-type Edges = Map<string, SuccessorSet>
-type SimpleEdges = [string, SimpleSuccessorSet][];
-
-type NodeData = Record<string, any>;
-type Nodes = Map<string, NodeData>;
-type SimpleNodes = [string, NodeData][];
+export type NodeData = Record<string, any>;
+export type Nodes = Map<string, NodeData>;
+export type SuccessorSet = Set<string>;
+export type Edges = Map<string, SuccessorSet>;
+export type SerializableNodes = [string, NodeData][];
+export type SerializableSuccessorSet = Array<string>;
+export type SerializableEdges = [string, SerializableSuccessorSet][];
 
 interface RichNode {
   data: NodeData,
@@ -17,8 +15,8 @@ interface RichNode {
 }
 
 interface ISimpleDirectedGraph {
-  edges: SimpleEdges,
-  nodes: SimpleNodes,
+  edges: SerializableEdges,
+  nodes: SerializableNodes,
 }
 
 interface IDirectedGraphData {
