@@ -14,7 +14,7 @@ export type RichNode = {
   outDegree: number;
 };
 
-export type SerializedRichDirectedGraph = {
+export type SerializableRichDirectedGraph = {
   edges: SerializableEdges;
   nodes: SerializableNodes;
 };
@@ -28,18 +28,18 @@ export type RichDirectedGraph = RichDirectedGraphData & {
   deleteEdge(predecessor: string): RichDirectedGraph;
   deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph;
   deleteNode(node: string): RichDirectedGraph;
-  fromSerializable(directedGraph: SerializedRichDirectedGraph): RichDirectedGraphData;
+  fromSerializable(directedGraph: SerializableRichDirectedGraph): RichDirectedGraphData;
   get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
   removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph;
   setEdge(predecessor: string, successor: string): RichDirectedGraph;
   setNode(key: string, content: object): RichDirectedGraph;
-  toSerializable(): SerializedRichDirectedGraph;
+  toSerializable(): SerializableRichDirectedGraph;
 };
 
 export type RichDirectedGraphInitializationOptions = {
-  serializedDirectedGraph?: SerializedRichDirectedGraph;
+  serializedDirectedGraph?: SerializableRichDirectedGraph;
   richDirectedGraph?: RichDirectedGraph;
 };
 
@@ -111,7 +111,7 @@ export default class RDG implements RichDirectedGraph {
     return this;
   }
 
-  fromSerializable(serializedRichDirectedGraph: SerializedRichDirectedGraph): RichDirectedGraphData {
+  fromSerializable(serializedRichDirectedGraph: SerializableRichDirectedGraph): RichDirectedGraphData {
     return {
       edges: serializedRichDirectedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
@@ -123,7 +123,7 @@ export default class RDG implements RichDirectedGraph {
     };
   }
 
-  toSerializable(): SerializedRichDirectedGraph {
+  toSerializable(): SerializableRichDirectedGraph {
     return {
       edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
       nodes: [...this.nodes],
