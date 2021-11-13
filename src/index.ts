@@ -12,40 +12,49 @@ export type RichNode = {
   inDegree: number;
   node: string;
   outDegree: number;
-}
+};
 
-export type SerializableDirectedGraph = {
+export type SerializableRichDirectedGraph = {
   edges: SerializableEdges;
   nodes: SerializableNodes;
-}
+};
 
-export type DirectedGraphData = {
+export type RichDirectedGraphData = {
   edges: Edges;
   nodes: Nodes;
-}
+};
 
-export type RichDirectedGraph = DirectedGraphData & {
+export type RichDirectedGraph = RichDirectedGraphData & {
   deleteEdge(predecessor: string): RichDirectedGraph;
   deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph;
   deleteNode(node: string): RichDirectedGraph;
-  fromSerializable(directedGraph: SerializableDirectedGraph): DirectedGraphData;
+  fromSerializable(directedGraph: SerializableRichDirectedGraph): RichDirectedGraphData;
   get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
   removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph;
   setEdge(predecessor: string, successor: string): RichDirectedGraph;
   setNode(key: string, content: object): RichDirectedGraph;
-  toSerializable(): SerializableDirectedGraph;
-}
+  toSerializable(): SerializableRichDirectedGraph;
+};
+
+export type RichDirectedGraphInitializationOptions = {
+  serializedDirectedGraph?: SerializableRichDirectedGraph;
+  richDirectedGraph?: RichDirectedGraph;
+} | undefined;
 
 
 export default class RDG implements RichDirectedGraph {
   edges: Edges;
   nodes: Nodes;
 
-  constructor(serializableDirectedGraph?: SerializableDirectedGraph) {
-    if (serializableDirectedGraph) {
-      const { edges, nodes } = this.fromSerializable(serializableDirectedGraph);
+  constructor({ richDirectedGraph, serializedDirectedGraph }: RichDirectedGraphInitializationOptions) {
+    if (richDirectedGraph) {
+      const { edges, nodes } = richDirectedGraph;
+      this.edges = edges;
+      this.nodes = nodes;
+    } else if (serializedDirectedGraph) {
+      const { edges, nodes } = this.fromSerializable(serializedDirectedGraph);
       this.edges = edges;
       this.nodes = nodes;
     } else {
@@ -102,7 +111,7 @@ export default class RDG implements RichDirectedGraph {
     return this;
   }
 
-  fromSerializable(directedGraph: SerializableDirectedGraph): DirectedGraphData {
+  fromSerializable(directedGraph: SerializableRichDirectedGraph): RichDirectedGraphData {
     return {
       edges: directedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
@@ -114,7 +123,7 @@ export default class RDG implements RichDirectedGraph {
     };
   }
 
-  toSerializable(): SerializableDirectedGraph {
+  toSerializable(): SerializableRichDirectedGraph {
     return {
       edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
       nodes: [...this.nodes],
