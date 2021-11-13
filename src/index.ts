@@ -28,14 +28,14 @@ export type RichDirectedGraph = DirectedGraphData & {
   deleteEdge(predecessor: string): RichDirectedGraph;
   deleteEdgeSuccessor(predecessor: string, successor: string): RichDirectedGraph;
   deleteNode(node: string): RichDirectedGraph;
-  fromJSON(directedGraph: SerializableDirectedGraph): DirectedGraphData;
+  fromSerializable(directedGraph: SerializableDirectedGraph): DirectedGraphData;
   get(node: string): RichNode;
   getInDegree(node: string): number;
   getOutDegree(node: string): number;
   removeNodeFromEdgeSuccessors(node: string): RichDirectedGraph;
   setEdge(predecessor: string, successor: string): RichDirectedGraph;
   setNode(key: string, content: object): RichDirectedGraph;
-  toJSON(): SerializableDirectedGraph;
+  toSerializable(): SerializableDirectedGraph;
 }
 
 
@@ -45,7 +45,7 @@ export default class RDG implements RichDirectedGraph {
 
   constructor(serializableDirectedGraph?: SerializableDirectedGraph) {
     if (serializableDirectedGraph) {
-      const { edges, nodes } = this.fromJSON(serializableDirectedGraph);
+      const { edges, nodes } = this.fromSerializable(serializableDirectedGraph);
       this.edges = edges;
       this.nodes = nodes;
     } else {
@@ -102,7 +102,7 @@ export default class RDG implements RichDirectedGraph {
     return this;
   }
 
-  fromJSON(directedGraph: SerializableDirectedGraph): DirectedGraphData {
+  fromSerializable(directedGraph: SerializableDirectedGraph): DirectedGraphData {
     return {
       edges: directedGraph.edges.reduce((acc, curr) => {
         return acc.set(curr[0], new Set([...curr[1]]));
@@ -114,7 +114,7 @@ export default class RDG implements RichDirectedGraph {
     };
   }
 
-  toJSON(): SerializableDirectedGraph {
+  toSerializable(): SerializableDirectedGraph {
     return {
       edges: [...this.edges].reduce((acc, cur) => acc.concat([[cur[0], [...cur[1]]]]), []),
       nodes: [...this.nodes],
